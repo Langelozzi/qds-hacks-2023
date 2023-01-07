@@ -10,12 +10,22 @@ import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
 
 function App() {
+    const [recipes, setRecipes] = React.useState([]);
+
+    React.useEffect(() => {
+        async function loadRecipes() {
+            const data = await getAllRecipes();
+            setRecipes(data);
+        }
+        loadRecipes();
+    }, [])
+
     return (
         <Router>
             <Nav />
             <div className='content'>
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<Home recipes={recipes} setRecipes={setRecipes}/>} />
                 </Routes>
             </div>
         </Router>
