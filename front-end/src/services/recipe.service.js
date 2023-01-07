@@ -10,11 +10,19 @@ async function getRecipesOrderedByIngredients(ingredients) {
     const response = await axios.post(
         `${configData.apiUrl}/recipes/ingredient-wizard`,
         {ingredients: ingredients}
-    )
+    );
+    return response;
+}
+
+async function getRecipeById(id) {
+    const response = await axios.get(
+        `${configData.apiUrl}/recipes/${id}`
+    );
     return response;
 }
 
 export {
     getAllRecipes,
-    getRecipesOrderedByIngredients
+    getRecipesOrderedByIngredients,
+    getRecipeById
 }

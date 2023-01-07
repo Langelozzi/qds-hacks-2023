@@ -25,7 +25,6 @@ export default function Home({ recipes, setRecipes }) {
                 </FormGroup>
                 <Button type="submit">Search</Button>
             </Form>
-            <Button onClick={logRecipes}>Log Recipes to console</Button>
             <h2>Recipe titles</h2>
             <div>
                 {
