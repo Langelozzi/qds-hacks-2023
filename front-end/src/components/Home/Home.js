@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button, Form, FormGroup, FormControl } from 'react-bootstrap';
+import { getRecipesOrderedByIngredients } from '../../services/recipe.service'
 import './Home.css';
 
 export default function Home({ recipes, setRecipes }) {
-    function logRecipes() {
-        console.log(recipes);
+    async function getRecipesWithIngredients(ingredients) {
+        const recipes = await getRecipesOrderedByIngredients(ingredients)
     }
 
     function handleSearchSubmit(event) {
