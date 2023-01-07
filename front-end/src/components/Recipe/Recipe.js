@@ -22,6 +22,13 @@ export default function Recipe() {
     });
   }
 
+  let instructionsToRender;
+  if (recipe.analyzedInstructions[0].steps) {
+    instructionsToRender = recipe.analyzedInstructions[0].steps.map(instructions => {
+      return <div key={instructions.number}>{instructions.step}</div>;
+    });
+  }
+
   return (
     <div>
       <div className="header">
@@ -43,6 +50,9 @@ export default function Recipe() {
 
       <div className="instructions">
         <h2 className="left">Instructions</h2>
+        {
+          instructionsToRender
+        }
       </div>
 
 
