@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, FormControl } from 'react-bootstrap';
 import './Home.css';
+import { Squash as Hamburger } from 'hamburger-react';
 
 export default function Home({ recipes, setRecipes }) {
     function logRecipes() {
@@ -14,6 +15,7 @@ export default function Home({ recipes, setRecipes }) {
 
     return (
         <div className="landing-page">
+            <Hamburger />
             <h1>Welcome to Reci.py</h1>
             <img src={require("../../recipy.png")} alt="recipe" />
             < Form onSubmit={handleSearchSubmit}>
