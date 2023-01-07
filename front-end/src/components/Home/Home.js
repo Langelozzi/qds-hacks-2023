@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Form, FormGroup, FormControl } from 'react-bootstrap';
 import { getRecipesOrderedByIngredients } from '../../services/recipe.service'
 import './Home.css';
-import { Squash as Hamburger } from 'hamburger-react';
 
 export default function Home({ recipes, setRecipes }) {
     async function getRecipesWithIngredients(ingredients) {
@@ -16,7 +15,6 @@ export default function Home({ recipes, setRecipes }) {
 
     return (
         <div className="landing-page">
-            <Hamburger />
             <h1>Welcome to Reci.py</h1>
             <img src={require("../../recipy.png")} alt="recipe" />
             < Form onSubmit={handleSearchSubmit}>
