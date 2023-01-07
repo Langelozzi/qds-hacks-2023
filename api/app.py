@@ -27,5 +27,10 @@ def get_recipes_matched_by_ingredient():
     return recipe_controller.get_recipes_ordered_by_ingredients(ingredients)
 
 
+@app.route('/recipes/<recipe_id>')
+def get_recipe_by_id(recipe_id):
+    return recipe_controller.get_recipe_by_id(recipe_id)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
