@@ -1,8 +1,9 @@
 import json
 
+
 class RecipeController:
     def __init__(self, data_path) -> None:
-        with open(data_path) as data:
+        with open(data_path, encoding="utf8") as data:
             unfiltered_recipes = json.load(data)
             self.recipes = self.__remove_duplicate_recipes(unfiltered_recipes)
 
@@ -18,6 +19,11 @@ class RecipeController:
         ordered_recipes = self.__sort_by_match_score(recipes_with_at_least_one_match)
 
         return ordered_recipes
+
+    def get_recipe_by_id(self, recipe_id) -> dict:
+        for element in self.recipes:
+            if element['id'] == recipe_id:
+                return element
 
     # Private methods
     @staticmethod
@@ -74,12 +80,13 @@ class RecipeController:
 
 
 def main() -> None:
-    recipe_controller = RecipeController()
+    recipe_controller = RecipeController('../../data/recipes.json')
 
     ingredients = ["cream", "sour cream", "sugar", "orange", "apples", "cheese", "pecans"]
     recipe_controller.get_recipes_ordered_by_ingredients(ingredients)
 
+    print(recipe_controller.get_recipe_by_id(641794))
+
 
 if __name__ == '__main__':
     main()
-
