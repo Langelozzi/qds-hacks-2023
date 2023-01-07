@@ -1,9 +1,8 @@
 import json
 
-
 class RecipeController:
-    def __init__(self) -> None:
-        with open('../../data/recipes.json') as data:
+    def __init__(self, data_path) -> None:
+        with open(data_path) as data:
             unfiltered_recipes = json.load(data)
             self.recipes = self.__remove_duplicate_recipes(unfiltered_recipes)
 
@@ -15,7 +14,8 @@ class RecipeController:
 
     def get_recipes_ordered_by_ingredients(self, ingredients: list):
         recipes_with_match_scores = self.__set_match_scores(self.recipes, ingredients)
-        ordered_recipes = self.__sort_by_match_score(recipes_with_match_scores)
+        recipes_with_at_least_one_match = [recipe for recipe in recipes_with_match_scores if recipe["matchScore"] > 0]
+        ordered_recipes = self.__sort_by_match_score(recipes_with_at_least_one_match)
 
         return ordered_recipes
 
