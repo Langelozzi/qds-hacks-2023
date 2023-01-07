@@ -16,7 +16,7 @@ def root():
 
 @app.route('/recipes')
 def get_all_recipes():
-    return recipe_controller.getAllRecipes()
+    return recipe_controller.get_all_recipes()
 
 
 if __name__ == '__main__':
