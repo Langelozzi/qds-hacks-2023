@@ -8,7 +8,7 @@ export default function IngredientCard({ text }) {
             <Card>
                 <Card.Body>
                     <Card.Text>{text}</Card.Text>
-                    <Button><span>&#120;</span></Button>
+                    <Button variant='danger'><span>&#120;</span></Button>
                 </Card.Body>
             </Card>
         </div>
