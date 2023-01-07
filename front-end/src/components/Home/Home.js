@@ -14,8 +14,9 @@ export default function Home({ recipes }) {
 
     return (
         <div className="landing-page">
-            <h1>Welcome to My Recipe App</h1>
-            <Form onSubmit={handleSearchSubmit}>
+            <h1>Welcome to Reci.py</h1>
+            <img src={require("../../recipy.png")} alt="recipe" />
+            < Form onSubmit={handleSearchSubmit}>
                 <FormGroup>
                     <FormControl type="text" placeholder="Search recipes" />
                 </FormGroup>
