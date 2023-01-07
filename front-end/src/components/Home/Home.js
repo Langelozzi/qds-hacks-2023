@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, FormControl } from 'react-bootstrap';
 import { getRecipesOrderedByIngredients } from '../../services/recipe.service'
+import IngredientCard from '../IngredientCard/IngredientCard';
 import './Home.css';
 
 export default function Home({ recipes, setRecipes }) {
@@ -17,20 +18,13 @@ export default function Home({ recipes, setRecipes }) {
         <div className="landing-page">
             <h1>Welcome to Reci.py</h1>
             <img src={require("../../recipy.png")} alt="recipe" />
-            < Form onSubmit={handleSearchSubmit}>
+            <IngredientCard text={'Sugar'}/>
+            <Form onSubmit={handleSearchSubmit}>
                 <FormGroup>
-                    <FormControl type="text" placeholder="Search recipes" />
+                    <FormControl type="text" placeholder="Input ingredient" />
                 </FormGroup>
                 <Button type="submit">Search</Button>
             </Form>
-            <h2>Recipe titles</h2>
-            <div>
-                {
-                    recipes.map((recipe) => {
-                        return <div key={recipe.id}>{recipe.title}</div>
-                    })
-                }
-            </div>
         </div>
     )
 }
