@@ -1,8 +1,7 @@
 .card {
     border: solid black 1px;
-    background-color: #47ABFF;
-    display: inline-block;
-    padding: 1rem;
+    background-color: #47ABFF !important;
+    display: inline-block !important;
 }
 
 .card-text {
@@ -13,4 +12,5 @@
 .btn {
     display: inline;
     margin-left: 1rem;
+    background-color: none !important;
 }
