@@ -1,19 +1,22 @@
-from flask import Flask
+from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
 from src.controllers.recipe_controller import RecipeController
 
 
 app = Flask(__name__)
+CORS(app)
 recipe_controller = RecipeController()
 
 
 @app.route('/')
 def root():
-    return {'text': 'hello world'}
+    response = jsonify({'text': 'hello world'})
+    return response
 
 
 @app.route('/recipes')
 def get_all_recipes():
-    return recipe_controller.getAllRecipeNames()
+    return recipe_controller.getAllRecipes()
 
 
 if __name__ == '__main__':
