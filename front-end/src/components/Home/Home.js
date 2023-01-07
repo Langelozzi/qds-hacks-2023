@@ -1,20 +1,32 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Form, FormGroup, FormControl } from 'react-bootstrap';
 import './Home.css';
 
-export default function Home({recipes}) {
+export default function Home({ recipes }) {
     function logRecipes() {
         console.log(recipes);
     }
 
+    function handleSearchSubmit(event) {
+        event.preventDefault();
+        // Perform search here
+    }
+
     return (
-        <div>
+        <div className="landing-page">
+            <h1>Welcome to My Recipe App</h1>
+            <Form onSubmit={handleSearchSubmit}>
+                <FormGroup>
+                    <FormControl type="text" placeholder="Search recipes" />
+                </FormGroup>
+                <Button type="submit">Search</Button>
+            </Form>
             <Button onClick={logRecipes}>Log Recipes to console</Button>
             <h2>Recipe titles</h2>
             <div>
                 {
                     recipes.map((recipe) => {
-                        return <div key={recipe.id}>{recipe.title}</div> 
+                        return <div key={recipe.id}>{recipe.title}</div>
                     })
                 }
             </div>
