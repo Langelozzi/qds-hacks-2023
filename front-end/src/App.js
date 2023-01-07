@@ -8,6 +8,7 @@ import { getAllRecipes } from './services/recipe.service';
 // Import components
 import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
+import Recipe from './components/Recipe/Recipe';
 
 function App() {
     const [recipes, setRecipes] = React.useState([]);
@@ -25,7 +26,8 @@ function App() {
             <Nav />
             <div className='content'>
                 <Routes>
-                    <Route path='/' element={<Home recipes={recipes} setRecipes={setRecipes}/>} />
+                    <Route path='/' element={<Home recipes={recipes} setRecipes={setRecipes} />} />
+                    <Route path='/recipe' element={<Recipe />} />
                 </Routes>
             </div>
         </Router>
