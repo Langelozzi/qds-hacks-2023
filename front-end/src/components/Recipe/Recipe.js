@@ -1,7 +1,7 @@
 import React from 'react';
 import './Recipe.css';
 import { getRecipeById } from '../../services/recipe.service';
-import { Button } from 'react-bootstrap'
+import Image from 'react-bootstrap/Image'
 
 export default function Recipe() {
   const [recipe, setRecipe] = React.useState({});
@@ -15,9 +15,9 @@ export default function Recipe() {
   }, [])
 
   return (
-    <div>{recipe.title}
-      <Button>sup</Button>
-
+    <div>
+      <h1 class="centre">{recipe.title}</h1>
+      <img class="mealPicture centerImage" src={recipe.image}></img>
     </div>
   )
 }
