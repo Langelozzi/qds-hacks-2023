@@ -1,5 +1,5 @@
 .recipe-card {
-    margin: 2%;
+    margin: 3%;
 }
 
 .recipe-card .card-text {
@@ -9,6 +9,10 @@
     overflow: hidden;
 }
 
+.recipe-card p {
+    text-align: center;
+}
+
 a, a:hover {
     text-decoration: none;
     color: rgb(30, 29, 29);
@@ -16,5 +20,5 @@ a, a:hover {
 
 .card-container {
     display: inline-block;
-    width: 33%;
+    width: calc(100%/3);
 }
