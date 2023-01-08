@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
 
+
+.header {
+    padding-top: 8%;
+}
+
 .centre {
     text-align: center;
+    color: white;
 }
 
 .mealPicture {
-    border: 2px solid black;
-    padding: 5px;
-
+    padding: 15px;
 }
 
 .centerImage {
@@ -19,8 +23,9 @@
 }
 
 #headerMenu {
+    padding-top: 10px;
     display: table;
-    width: 350px;
+    width: 400px;
     margin: auto;
     table-layout: fixed;
 }
@@ -28,4 +33,26 @@
 .menuitem {
     display: table-cell;
     text-align: center;
+    color: white;
+}
+
+#centrepiece {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+main {
+    padding-top: 6%;
+    width: 80%;
+    margin: auto;
+}
+
+.recipeContent {
+    float: left;
+    width: 60%;
+}
+
+.recipeImage {
+    float: right;
+    width: 40%;
 }
