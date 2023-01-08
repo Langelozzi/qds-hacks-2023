@@ -1,10 +1,15 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
-import { useNavigation, Link } from 'react-router-dom';
+import { Card, ProgressBar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './RecipeCard.css';
 
 export default function RecipeCard({ recipe }) {
     const [recipeData, setRecipeData] = React.useState({ ...recipe })
+
+    function progressBarWithLabel() {
+        const now = recipe.matchScore * 100;
+        return <ProgressBar now={now} label={`${now}%`}/>
+    }
 
     return (
         <div className='card-container'>
@@ -14,8 +19,9 @@ export default function RecipeCard({ recipe }) {
                     <Card.Body>
                         <Card.Title>{recipe.title}</Card.Title>
                         <Card.Text>
-                            {recipe.summary}
+                            {recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}
                         </Card.Text>
+                        {progressBarWithLabel()}
                     </Card.Body>
                 </Card>
             </Link>
