@@ -7,8 +7,23 @@ export default function RecipeCard({ recipe }) {
     const [recipeData, setRecipeData] = React.useState({ ...recipe })
 
     function progressBarWithLabel() {
-        const now = recipe.matchScore * 100;
-        return <ProgressBar now={now} label={`${now}%`}/>
+        const matchScorePercentage = Math.round(recipe.matchScore * 100);
+        let colorVariant = 'primary';
+
+        if (matchScorePercentage < 30) {
+            colorVariant = 'danger';
+        } else if (matchScorePercentage => 30 && matchScorePercentage <= 60) {
+            colorVariant = 'warning';
+        } else {
+            colorVariant = 'success';
+        }
+
+
+        return <ProgressBar 
+            variant={colorVariant}
+            now={matchScorePercentage} 
+            label={`${matchScorePercentage}%`}
+        />
     }
 
     return (
@@ -17,11 +32,12 @@ export default function RecipeCard({ recipe }) {
                 <Card className='recipe-card'>
                     <Card.Img variant="top" src={recipe.image} />
                     <Card.Body>
-                        <Card.Title>{recipe.title}</Card.Title>
+                        <Card.Title className='recipe-card-title'>{recipe.title}</Card.Title>
                         <Card.Text>
                             {recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}
                         </Card.Text>
                         {progressBarWithLabel()}
+                        <p>{`Matched ${recipe.numMatches}/${recipe.numIngredients} ingredients`}</p>
                     </Card.Body>
                 </Card>
             </Link>

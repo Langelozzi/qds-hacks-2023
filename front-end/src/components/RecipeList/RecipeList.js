@@ -1,5 +1,6 @@
-import React from 'react'
-import RecipeCard from '../RecipeCard/RecipeCard'
+import React from 'react';
+import RecipeCard from '../RecipeCard/RecipeCard';
+import './RecipeList.css';
 
 export default function RecipeList({ recipes }) {
 
@@ -11,7 +12,7 @@ export default function RecipeList({ recipes }) {
                     return <RecipeCard key={recipe.id} recipe={recipe}/>
                 })
                 :
-                <h2>No recipes found with the ingredients you have</h2>
+                <h2>No results</h2>
             }
         </div>
     )
