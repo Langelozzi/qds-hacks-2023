@@ -30,6 +30,14 @@ async function getVeganRecipesOrderedByIngredients(ingredients) {
     return response.data;
 }
 
+async function getGlutenFreeRecipesOrderedByIngredients(ingredients) {
+    const response = await axios.post(
+        `${configData.apiUrl}/recipes/ingredient-wizard/gluten-free`,
+        { ingredients: ingredients }
+    );
+    return response.data;
+}
+
 async function getRecipeById(id) {
     const response = await axios.get(
         `${configData.apiUrl}/recipes/${id}`
@@ -42,5 +50,6 @@ export {
     getRecipesOrderedByIngredients,
     getHealthyRecipesOrderedByIngredients,
     getVeganRecipesOrderedByIngredients,
+    getGlutenFreeRecipesOrderedByIngredients,
     getRecipeById
 }

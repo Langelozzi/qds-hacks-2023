@@ -1,5 +1,5 @@
 import React from 'react';
-import { getRecipesOrderedByIngredients, getHealthyRecipesOrderedByIngredients, getVeganRecipesOrderedByIngredients } from '../../services/recipe.service'
+import { getRecipesOrderedByIngredients, getHealthyRecipesOrderedByIngredients, getVeganRecipesOrderedByIngredients, getGlutenFreeRecipesOrderedByIngredients } from '../../services/recipe.service'
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import IngredientCard from '../IngredientCard/IngredientCard';
 
@@ -45,6 +45,9 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
                 break;
             case "vegan":
                 recipes = await getVeganRecipesOrderedByIngredients(ingredients);
+                break;
+            case "gluten":
+                recipes = await getGlutenFreeRecipesOrderedByIngredients(ingredients);
                 break;
             default:
                 recipes = await getRecipesOrderedByIngredients(ingredients);

@@ -19,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/healthy" element={<Home filter={"healthy"} />} />
           <Route path="/vegan" element={<Home filter={"vegan"} />} />
+          <Route path="/gluten" element={<Home filter={"gluten"} />} />
           <Route path="/recipe" element={<Recipe />} />
         </Routes>
       </div>
