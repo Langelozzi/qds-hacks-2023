@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // React Router Dom might not need to be imported here
 import { Link as linkR } from "react-router-dom";
-import { Link as linkS } from "react-scroll";
+// import { Link as linkS } from "react-scroll";
 
 export const Nav = styled.nav`
   background: #273262;
@@ -52,7 +52,7 @@ export const NavItem = styled.li`
 
 //links to other pages on the site by scrolling
 //change this to linkR or change coolour on click
-export const NavLinks = styled(linkS)`
+export const NavLinks = styled(linkR)`
   color: #fff;
   display: flex;
   align-items: center;
