@@ -4,11 +4,11 @@ import { Button, Card } from 'react-bootstrap';
 
 export default function IngredientCard({ text, index, removeIngredient }) {
     return (
-        <div className="text-center">
+        <div className="text-center ingredientBtn">
             <Card className='ingredient-card'>
                 <Card.Body>
                     <Card.Text>{text}</Card.Text>
-                    <Button variant='danger' size='sm' onClick={() => { removeIngredient(index) }}><span>&#120;</span></Button>
+                    <Button variant='link' size='sm' onClick={() => { removeIngredient(index) }}><span>&#120;</span></Button>
                 </Card.Body>
             </Card>
         </div>

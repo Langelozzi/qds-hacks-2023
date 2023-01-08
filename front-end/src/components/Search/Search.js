@@ -29,7 +29,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes }) {
 
     return (
         <div className='search'>
-            <div>
+            <div className='ingredientList'>
                 {
                     ingredients.map((ingredient, index) => {
                         return <IngredientCard key={`${ingredient}-${index}`} text={ingredient} index={index} removeIngredient={removeIngredient} />
