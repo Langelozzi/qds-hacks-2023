@@ -12,9 +12,14 @@ export const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  position: sticky;
+  // position: sticky;
+width: 100%;
+  position: fixed;
+  // position: -webkit-sticky;
   // top: 0;
-  // z-index: 10;
+  top: 0;
+  z-index: 800;
+  
 
   // @media screen and (max-width: 960px) {
   //   transition: 0.8s all ease;
