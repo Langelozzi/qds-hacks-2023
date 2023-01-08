@@ -1,5 +1,5 @@
-.card {
-    margin: 1rem;
+.recipe-card {
+    margin: 2%;
 }
 
 .card-text {
@@ -7,4 +7,15 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: rgb(30, 29, 29);
+    width: 100%;
+}
+
+.card-container {
+    display: inline-block;
+    width: 33%;
 }

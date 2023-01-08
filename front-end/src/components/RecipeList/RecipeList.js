@@ -4,7 +4,7 @@ import RecipeCard from '../RecipeCard/RecipeCard'
 export default function RecipeList({ recipes }) {
 
     return (
-        <div>
+        <div className='recipe-list'>
             {
                 recipes.length > 0 ?
                 recipes.map((recipe) => {
