@@ -1,4 +1,4 @@
-# QDS Hacks 2023
+# Reci.py - QDS Hacks 2023
 
 <b>Team Froggue</b>: Lucas Angelozzi, Arman Chinai, Annette Lam, Amir Eskandari, Cameron Smith
 
@@ -6,11 +6,11 @@
 
 ## Objective
 
-To create a Python-based web application that accepts a list of ingredients from the user, and returns an easy recipe for the user.
+We wanted to take our hackthon propmt, "turning data into insight", and give it a practical application for the widest range of users possible. We set out to create an application that, using our match score based algorithm, delivers the user a list of recipes that most closely matches the ingredients they already have in their homes! Instead of searching for a recipe, only to find out you need to buy all the ingredients for it, we want to let the user tell us what ingredients they have, and provide them with recipes they are most prepared to make.
 
 ### `Front-end`
 
-React based front-end that is interactive, responsive, with a modern design that is intuitive to use.
+An interactive, responsive, and modern React web application designed to be intuitive to use and aesthetically pleasing.
 
 ### `Back-end`
 
@@ -22,17 +22,21 @@ Flask based back-end that has endpoints for all user requests.
 
 ### `Nav bar`
 
-* All Recipes: displays all recipes according to ingredients entered
-* Healthy: sorts recipes by checking the JSON data if meets "healthy" criteria
-* Vegan: sorts recipes by checking the JSON data if meets "vegan" criteria
-* Gluten-free: sorts recipes by checking the JSON data if meets "gluten-free" criteria
-* Dairy-free: sorts recipes by checking the JSON data if meets "dairy-free" criteria
+* All Recipes: This tab will provide the user with all the recipes that match their ingredient query.
+* Healthy: Using the data set we scraped, we filtered out only the recipes that are identified as healthy, and only return those to a users query.
+* Vegan: This tab will only show search results that are vegan.
+* Gluten Free: The gluten free tab provides only search results that are gluten free, based on the data provided in our data set.
+* Dairy Free: The dairy free tab returns only dairy free search results.
 
 ### `Search bar`
 
-* The user enters the ingredients they have at home to search our recipe database.
-* The search results are yielded by keywords.
-* Ingredient keywords will be compiled on top of the search for ease of reference.
+The search bar provides the user with a minimalistic avenue to input their ingredients. As you input ingredients, you can see them being added to the list above. You can easily remove and add more, and only need to worry about a single text input. The search interface is consistent throughout all tabs of the application, to provide a congruent UI for the user.
+
+---
+
+## React README.md Information
+
+### Code Splitting
 
 ### `Recipe cards`
 

@@ -16,13 +16,13 @@ import { Link } from "react-router-dom";
 import {
   Nav,
   NavbarContainer,
-  NavLogo,
-  MobileIcon,
+  // NavLogo,
+  // MobileIcon,
   NavMenu,
   NavItem,
   NavLinks,
-  NavBtn,
-  NavBtnLink,
+  // NavBtn,
+  // NavBtnLink,
 } from "./NavbarElements";
 import "./Navbar.css";
 
@@ -115,7 +115,7 @@ const Navbar = () => {
               }}
             >
               <NavLinks
-                to="/gluten pages"
+                to="/gluten"
                 onClick={() => {
                   document
                     .querySelectorAll(".pages")
@@ -124,7 +124,7 @@ const Navbar = () => {
                 }}
                 className="pages"
               >
-                GLUTEN FREE
+                GLUTEN-FREE
               </NavLinks>
             </NavItem>
             <NavItem
@@ -137,7 +137,7 @@ const Navbar = () => {
               }}
             >
               <NavLinks to="/dairy" className="pages">
-                DAIRY FREE
+                DAIRY-FREE
               </NavLinks>
             </NavItem>
           </NavMenu>
