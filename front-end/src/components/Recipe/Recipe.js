@@ -9,6 +9,17 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
 
+{/* <table>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table> */}
+
+
+
+
 export default function Recipe() {
   const location = useLocation();
   const recipe = location.state?.recipe;
@@ -16,14 +27,36 @@ export default function Recipe() {
   let ingredientsToRender;
   if (recipe.extendedIngredients) {
     ingredientsToRender = recipe.extendedIngredients.map(ingredient => {
-      return <div key={ingredient.id}>{ingredient.name}</div>;
+      return <tr key={ingredient.id}>
+        <td className="quantity" key="quantity">
+          {ingredient.amount}
+        </td>
+        <td className="ingredient" key="ingredient">
+          <div key={ingredient.id}>
+            {ingredient.unit}&nbsp;{ingredient.name}
+          </div>
+        </td>
+      </tr>;
     });
   }
+
+
+
+
+
+
 
   let instructionsToRender;
   if (recipe.analyzedInstructions) {
     instructionsToRender = recipe.analyzedInstructions[0].steps.map(instructions => {
-      return <div key={instructions.number}>{instructions.step}</div>;
+      return <tr key={instructions.number}>
+        <td className="number" key="number">
+          <div key={instructions.number}>{instructions.number}</div>
+        </td>
+        <td className="instruction" key="instruction">
+          <div key={instructions.number}>{instructions.step}</div>
+        </td>
+      </tr>
     });
   }
 
@@ -54,9 +87,11 @@ export default function Recipe() {
               }
             </Tab>
             <Tab eventKey="instructions" title="Instructions">
-              {
-                instructionsToRender
-              }
+              <table>
+                {
+                  instructionsToRender
+                }
+              </table>
             </Tab>
           </Tabs>
         </div>
