@@ -56,14 +56,11 @@ export default function Recipe() {
       <main>
         <div className="recipeContent">
           <Tabs
-            defaultActiveKey="description"
+            defaultActiveKey="ingredients"
             id="uncontrolled-tab-example"
             className="mb-3"
             fill
           >
-            <Tab eventKey="description" title="Description">
-              <p className="recipeDescription">{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
-            </Tab>
             <Tab eventKey="ingredients" title="Ingredients">
               <div className="recipeDescription">
                 <table>
@@ -85,6 +82,9 @@ export default function Recipe() {
                   </tbody>
                 </table>
               </div>
+            </Tab>
+            <Tab eventKey="description" title="Description">
+              <p className="recipeDescription">{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
             </Tab>
           </Tabs>
         </div>

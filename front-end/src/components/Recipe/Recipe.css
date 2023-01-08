@@ -56,7 +56,16 @@ main {
 
 .recipeImage {
     float: right;
+    padding-top: 1px;
+    padding-left: 25px;
     width: 40%;
+}
+
+.recipeImage img {
+    border-radius: 5px;
+    padding: 0px !important;
+    box-sizing: content-box;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 30px 0 rgba(0, 0, 0, 0.19);
 }
 
 .recipeDescription {
@@ -107,4 +116,8 @@ main {
 
 .recipeContent {
     border-radius: 8px;
+}
+
+.recipeDescription {
+    line-height: 2.5;
 }
