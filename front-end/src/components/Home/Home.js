@@ -3,7 +3,7 @@ import RecipeList from "../RecipeList/RecipeList";
 import Search from "../Search/Search";
 import "./Home.css";
 
-export default function Home({ recipes, setRecipes }) {
+export default function Home() {
   const [filteredRecipes, setFilteredRecipes] = React.useState([]);
 
   return (
@@ -13,7 +13,7 @@ export default function Home({ recipes, setRecipes }) {
         filteredRecipes={filteredRecipes}
         setFilteredRecipes={setFilteredRecipes}
       />
-      <RecipeList recipes={filteredRecipes} />
+      <RecipeList recipes={filteredRecipes} setRecipes={setFilteredRecipes} />
     </div>
   );
 }
