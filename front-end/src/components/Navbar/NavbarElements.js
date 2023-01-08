@@ -68,6 +68,10 @@ export const NavLinks = styled(linkR)`
 
     border-bottom: 3px solid #f9de99;
   }
+  // // add css to the active link by aria current
+  // &.active {
+  //   border-bottom: 3px solid #f9de99;
+  // }
 `;
 
 // might not need

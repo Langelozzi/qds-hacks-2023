@@ -26,6 +26,10 @@ import {
 } from "./NavbarElements";
 import "./Navbar.css";
 
+document.querySelector(".nav-links").array.forEach((link) => {
+  console.log(link.href);
+});
+
 const Navbar = () => {
   function handleClick(event) {
     event.target.classList.toggle("active");
@@ -57,7 +61,13 @@ const Navbar = () => {
           </MobileIcon> */}
           <NavMenu>
             <NavItem>
-              <NavLinks to="about">ALL RECIPES</NavLinks>
+              <NavLinks
+                to="about"
+                className="nav-links"
+                // aria-current="page"
+              >
+                ALL RECIPES
+              </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="/healthy" onClick={(event) => handleClick(event)}>
@@ -65,13 +75,10 @@ const Navbar = () => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">CHEAP</NavLinks>
+              <NavLinks to="/popular">POPULAR</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">POPULAR</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="about">VEGAN</NavLinks>
+              <NavLinks to="/vega">VEGAN</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="about">VEGETARIAN</NavLinks>
