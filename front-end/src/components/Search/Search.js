@@ -11,7 +11,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
 
     const localHostKey = 'INGREDIENT_LIST_KEY';
 
-    React.useEffect(() => {
+    React.useState(() => {
         let localHostIngredients = JSON.parse(window.localStorage.getItem(localHostKey));
 
         if (localHostIngredients != null) {
