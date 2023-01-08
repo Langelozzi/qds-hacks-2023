@@ -9,20 +9,25 @@ export default function RecipeCard({ recipe }) {
     function progressBarWithLabel() {
         const matchScorePercentage = Math.round(recipe.matchScore * 100);
         let colorVariant = 'primary';
+        let animation = false;
 
         if (matchScorePercentage < 30) {
             colorVariant = 'danger';
-        } else if (matchScorePercentage => 30 && matchScorePercentage <= 60) {
+        } else if (30 <= matchScorePercentage && matchScorePercentage <= 60) {
             colorVariant = 'warning';
         } else {
             colorVariant = 'success';
         }
 
+        if (matchScorePercentage == 100) {
+            animation = true;
+        }
 
         return <ProgressBar 
             variant={colorVariant}
             now={matchScorePercentage} 
             label={`${matchScorePercentage}%`}
+            animated={animation}
         />
     }
 

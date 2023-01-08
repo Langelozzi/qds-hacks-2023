@@ -33,9 +33,9 @@ const Navbar = () => {
           <Link to="/">
             <img
               style={{
-                width: "80px",
+                width: "auto",
                 height: "80px",
-                padding: "10px",
+                padding: "10px 20px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
