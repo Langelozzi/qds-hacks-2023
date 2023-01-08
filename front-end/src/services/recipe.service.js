@@ -14,6 +14,14 @@ async function getRecipesOrderedByIngredients(ingredients) {
     return response.data;
 }
 
+async function getHealthyRecipesOrderedByIngredients(ingredients) {
+    const response = await axios.post(
+        `${configData.apiUrl}/recipes/ingredient-wizard/healthy`,
+        { ingredients: ingredients }
+    );
+    return response.data;
+}
+
 async function getRecipeById(id) {
     const response = await axios.get(
         `${configData.apiUrl}/recipes/${id}`

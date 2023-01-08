@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // React Router Dom might not need to be imported here
 import { Link as linkR } from "react-router-dom";
-import { Link as linkS } from "react-scroll";
+// import { Link as linkS } from "react-scroll";
 
 export const Nav = styled.nav`
   background: #273262;
@@ -33,7 +33,6 @@ export const NavbarContainer = styled.div`
   // max-width: 1100px;
 `;
 
-
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
@@ -48,12 +47,12 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavItem = styled.li`
-  // height: 80px;
+  height: 80px;
 `;
 
 //links to other pages on the site by scrolling
 //change this to linkR or change coolour on click
-export const NavLinks = styled(linkS)`
+export const NavLinks = styled(linkR)`
   color: #fff;
   display: flex;
   align-items: center;
@@ -61,10 +60,13 @@ export const NavLinks = styled(linkS)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  text-weight: bold;
+  font-weight: bold;
+  border-bottom: 3px solid transparent;
 
-  &.active {
-    border-bottom: 3px solid #01bf71;
+  &:hover {
+    color: #f9de99;
+
+    border-bottom: 3px solid #f9de99;
   }
 `;
 

@@ -171,3 +171,7 @@
     top: 21px;
     left: 8px;
 }
+
+.active {
+    background-color: #2df77e;
+}

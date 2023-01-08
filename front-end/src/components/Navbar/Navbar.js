@@ -24,8 +24,13 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
+import "./Navbar.css";
 
 const Navbar = () => {
+  function handleClick(event) {
+    event.target.classList.toggle("active");
+  }
+
   return (
     <div>
       <Nav>
@@ -33,9 +38,9 @@ const Navbar = () => {
           <Link to="/">
             <img
               style={{
-                width: "80px",
+                width: "auto",
                 height: "80px",
-                padding: "10px",
+                padding: "10px 20px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -55,7 +60,9 @@ const Navbar = () => {
               <NavLinks to="about">ALL RECIPES</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">HEALTHY</NavLinks>
+              <NavLinks to="/healthy" onClick={(event) => handleClick(event)}>
+                HEALTHY
+              </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="about">CHEAP</NavLinks>

@@ -5,9 +5,23 @@ import IngredientCard from '../IngredientCard/IngredientCard';
 
 import './Search.css';
 
-export default function Search({ filteredRecipes, setFilteredRecipes }) {
+export default function Search({ filteredRecipes, setFilteredRecipes, filter }) {
     const [ingredients, setIngredients] = React.useState([]);
     const [textInputVal, setTextInputVal] = React.useState('');
+
+    const localHostKey = 'INGREDIENT_LIST_KEY';
+
+    React.useState(() => {
+        let localHostIngredients = JSON.parse(window.localStorage.getItem(localHostKey));
+
+        if (localHostIngredients != null) {
+            setIngredients(localHostIngredients);
+        }
+    }, [])
+
+    React.useEffect(() => {
+        window.localStorage.setItem(localHostKey, JSON.stringify(ingredients)); 
+    }, [ingredients])
 
     function addIngredient() {
         let ingredientsCopy = [...ingredients];
@@ -23,14 +37,25 @@ export default function Search({ filteredRecipes, setFilteredRecipes }) {
     }
 
     async function handleSearchSubmit(event) {
-        const recipes = await getRecipesOrderedByIngredients(ingredients)
+        let recipes = [];
+
+        switch (filter) {
+            case "healthy":
+                recipes = await getRecipesOrderedByIngredients(ingredients);
+                break;
+            default:
+                recipes = await getRecipesOrderedByIngredients(ingredients);
+                break;
+        }
+
         await setFilteredRecipes(recipes);
     };
 
     return (
         <div className='search'>
-            <div className='ingredientList'>
-                {
+            <div>
+                {   
+                    ingredients &&
                     ingredients.map((ingredient, index) => {
                         return <IngredientCard key={`${ingredient}-${index}`} text={ingredient} index={index} removeIngredient={removeIngredient} />
                     })

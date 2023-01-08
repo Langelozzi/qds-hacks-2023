@@ -50,6 +50,7 @@ main {
 .recipeContent {
     float: left;
     width: 60%;
+    background-color: grey;
 }
 
 .recipeImage {
