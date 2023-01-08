@@ -23,7 +23,7 @@ export default function Recipe() {
   }
 
   let instructionsToRender;
-  if (recipe.analyzedInstructions[0].steps) {
+  if (recipe.analyzedInstructions) {
     instructionsToRender = recipe.analyzedInstructions[0].steps.map(instructions => {
       return <div key={instructions.number}>{instructions.step}</div>;
     });
