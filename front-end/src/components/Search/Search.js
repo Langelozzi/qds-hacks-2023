@@ -5,13 +5,9 @@ import IngredientCard from '../IngredientCard/IngredientCard';
 
 import './Search.css';
 
-export default function Search() {
+export default function Search({filteredRecipes, setFilteredRecipes}) {
     const [ingredients, setIngredients] = React.useState([]);
     const [textInputVal, setTextInputVal] = React.useState('');
-
-    async function getRecipesWithIngredients(ingredients) {
-        const recipes = await getRecipesOrderedByIngredients(ingredients)
-    };
 
     function addIngredient() {
         let ingredientsCopy = [...ingredients];
@@ -26,8 +22,9 @@ export default function Search() {
         setIngredients(ingredientsCopy)
     }
 
-    function handleSearchSubmit(event) {
-        console.log(ingredients)
+    async function handleSearchSubmit(event) {
+        const recipes = await getRecipesOrderedByIngredients(ingredients)
+        await setFilteredRecipes(recipes);
     };
 
     return (
