@@ -1,4 +1,5 @@
 import React from 'react';
+import RecipeList from '../RecipeList/RecipeList';
 import Search from '../Search/Search';
 import './Home.css';
 
@@ -8,7 +9,8 @@ export default function Home({ recipes, setRecipes }) {
     return (
         <div className="landing-page">
             <img src={require("../../recipy.png")} alt="recipe" />
-            <Search filteredRecipes={filteredRecipes} setFilteredRecipes={setFilteredRecipes} />
+            <Search filteredRecipes={filteredRecipes} setFilteredRecipes={setFilteredRecipes}/>
+            <RecipeList recipes={filteredRecipes}/>
         </div>
     )
 }

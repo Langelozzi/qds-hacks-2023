@@ -11,7 +11,7 @@ async function getRecipesOrderedByIngredients(ingredients) {
         `${configData.apiUrl}/recipes/ingredient-wizard`,
         { ingredients: ingredients }
     );
-    return response;
+    return response.data;
 }
 
 async function getRecipeById(id) {
