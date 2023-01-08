@@ -14,7 +14,7 @@ export default function RecipeCard({ recipe }) {
                     <Card.Body>
                         <Card.Title>{recipe.title}</Card.Title>
                         <Card.Text>
-                            {recipe.summary}
+                            {recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}
                         </Card.Text>
                     </Card.Body>
                 </Card>
