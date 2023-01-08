@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+
 .centre {
     text-align: center;
 }
@@ -14,4 +16,16 @@
     margin-right: auto;
     width: 100%;
     box-sizing: border-box;
+}
+
+#headerMenu {
+    display: table;
+    width: 350px;
+    margin: auto;
+    table-layout: fixed;
+}
+
+.menuitem {
+    display: table-cell;
+    text-align: center;
 }

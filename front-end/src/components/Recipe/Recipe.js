@@ -2,6 +2,9 @@ import React from 'react';
 import './Recipe.css';
 import Image from 'react-bootstrap/Image'
 import { useLocation } from 'react-router-dom';
+import { FaRegClock } from "react-icons/fa";
+import { BsPeopleFill } from "react-icons/bs"
+import { GrTarget } from "react-icons/gr"
 
 export default function Recipe() {
     const location = useLocation();
@@ -15,7 +18,7 @@ export default function Recipe() {
   }
 
   let instructionsToRender;
-  if (recipe.analyzedInstructions[0].steps) {
+  if (recipe.analyzedInstructions) {
     instructionsToRender = recipe.analyzedInstructions[0].steps.map(instructions => {
       return <div key={instructions.number}>{instructions.step}</div>;
     });
@@ -25,9 +28,14 @@ export default function Recipe() {
     <div>
       <div className="header">
         <h1 className="centre">{recipe.title}</h1>
-        <img className="mealPicture centerImage" src={recipe.image}></img>
+        <div id="headerMenu">
+          <div class="menuitem"><FaRegClock></FaRegClock>&nbsp;&nbsp;{recipe.readyInMinutes}</div>
+          <div class="menuitem"><BsPeopleFill></BsPeopleFill>&nbsp;&nbsp;{recipe.servings}</div>
+          <div class="menuitem"><GrTarget></GrTarget>&nbsp;&nbsp;69% match</div>
+        </div>
       </div>
 
+      {/* <img className="mealPicture centerImage" src={recipe.image}></img>
       <div className="description">
         <h2 className="left">Description</h2>
         <p>{recipe.summary}</p>
@@ -45,7 +53,7 @@ export default function Recipe() {
         {
           instructionsToRender
         }
-      </div>
+      </div> */}
 
 
     </div>
