@@ -2,22 +2,31 @@ import React from 'react';
 import { getRecipesOrderedByIngredients, getHealthyRecipesOrderedByIngredients } from '../../services/recipe.service'
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import IngredientCard from '../IngredientCard/IngredientCard';
+import { useLocation } from 'react-router-dom';
 
 import './Search.css';
 
 export default function Search({ filteredRecipes, setFilteredRecipes, filter }) {
     const [ingredients, setIngredients] = React.useState([]);
     const [textInputVal, setTextInputVal] = React.useState('');
+    const location = useLocation();
 
     const localHostKey = 'INGREDIENT_LIST_KEY';
 
-    React.useState(() => {
+    React.useEffect(() => {
         let localHostIngredients = JSON.parse(window.localStorage.getItem(localHostKey));
 
         if (localHostIngredients != null) {
             setIngredients(localHostIngredients);
         }
     }, [])
+
+    React.useEffect(() => {
+        async function reload() {
+            await handleSearchSubmit();
+        }
+        reload();
+    }, [location])
 
     React.useEffect(() => {
         window.localStorage.setItem(localHostKey, JSON.stringify(ingredients));
@@ -38,7 +47,6 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
 
     async function handleSearchSubmit(event) {
         let recipes = [];
-        console.log(filter);
 
         switch (filter) {
             case "healthy":
