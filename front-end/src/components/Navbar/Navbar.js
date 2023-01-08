@@ -78,7 +78,7 @@ const Navbar = () => {
               <NavLinks to="/popular">POPULAR</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/vega">VEGAN</NavLinks>
+              <NavLinks to="/vegan">VEGAN</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="about">VEGETARIAN</NavLinks>

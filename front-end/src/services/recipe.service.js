@@ -22,6 +22,14 @@ async function getHealthyRecipesOrderedByIngredients(ingredients) {
     return response.data;
 }
 
+async function getVeganRecipesOrderedByIngredients(ingredients) {
+    const response = await axios.post(
+        `${configData.apiUrl}/recipes/ingredient-wizard/vegan`,
+        { ingredients: ingredients }
+    );
+    return response.data;
+}
+
 async function getRecipeById(id) {
     const response = await axios.get(
         `${configData.apiUrl}/recipes/${id}`
@@ -33,5 +41,6 @@ export {
     getAllRecipes,
     getRecipesOrderedByIngredients,
     getHealthyRecipesOrderedByIngredients,
+    getVeganRecipesOrderedByIngredients,
     getRecipeById
 }
