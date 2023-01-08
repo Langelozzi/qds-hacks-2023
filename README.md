@@ -6,11 +6,11 @@
 
 ## Objective
 
-To create a Python-based web application that accepts a list of ingredients from the user, and returns an easy recipe for the user.
+We wanted to take our hackthon propmt, "turning data into insight", and give it a practice application for the widest range of users possible. We set out to create an application that, using our match score based algorithm, delivers the user a list of recipes that most closely matches the ingredients they already have in their homes! Instead of searching for a recipe, only to find out you need to buy all the ingredients for it, we want to let the user tell us what ingredients they have, and provide them with recipes they are already ready to make.
 
 ### `Front-end`
 
-An interactive, responsive, and modern design that is intuitive to use.
+An interactive, responsive, and modern React web application designed to be intuitive to use and aesthetically pleasing.
 
 ### `Back-end`
 
