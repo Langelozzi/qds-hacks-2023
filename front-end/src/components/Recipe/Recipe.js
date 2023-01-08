@@ -2,6 +2,9 @@ import React from 'react';
 import './Recipe.css';
 import { getRecipeById } from '../../services/recipe.service';
 import Image from 'react-bootstrap/Image'
+import { FaRegClock } from "react-icons/fa";
+import { BsPeopleFill } from "react-icons/bs"
+import { GrTarget } from "react-icons/gr"
 
 export default function Recipe() {
   const [recipe, setRecipe] = React.useState({});
@@ -33,12 +36,14 @@ export default function Recipe() {
     <div>
       <div className="header">
         <h1 className="centre">{recipe.title}</h1>
-        <img className="mealPicture centerImage" src={recipe.image}></img>
-        <p>{recipe.readyInMinutes}</p>
-        <p>{recipe.servings}</p>
-        <p>69% match</p>
+        <div id="headerMenu">
+          <div class="menuitem"><FaRegClock></FaRegClock>&nbsp;&nbsp;{recipe.readyInMinutes}</div>
+          <div class="menuitem"><BsPeopleFill></BsPeopleFill>&nbsp;&nbsp;{recipe.servings}</div>
+          <div class="menuitem"><GrTarget></GrTarget>&nbsp;&nbsp;69% match</div>
+        </div>
       </div>
 
+      {/* <img className="mealPicture centerImage" src={recipe.image}></img>
       <div className="description">
         <h2 className="left">Description</h2>
         <p>{recipe.summary}</p>
@@ -56,7 +61,7 @@ export default function Recipe() {
         {
           instructionsToRender
         }
-      </div>
+      </div> */}
 
 
     </div>
