@@ -28,6 +28,9 @@ class RecipeController:
     def get_healthy_recipes(self) -> list:
         return [recipe for recipe in self.recipes if recipe['veryHealthy'] is True]
 
+    def get_vegan_recipes(self) -> list:
+        return [recipe for recipe in self.recipes if recipe['vegan'] is True]
+
     # Private methods
     @staticmethod
     def __remove_duplicate_recipes(data: list) -> list:
