@@ -63,11 +63,7 @@ const Navbar = () => {
           </MobileIcon> */}
           <NavMenu>
             <NavItem>
-              <NavLinks
-                to="/"
-                className="nav-links"
-                // aria-current="page"
-              >
+              <NavLinks to="/" className="nav-links" aria-current="page">
                 ALL RECIPES
               </NavLinks>
             </NavItem>

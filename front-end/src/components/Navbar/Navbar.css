@@ -176,7 +176,7 @@
     background-color: #2df77e;
 } */
 
-.pages[aria-current] {
+.pages[aria-current="page"] {
     color: #f9de99;
     border-bottom: 3px solid #f9de99;
 }
