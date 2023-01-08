@@ -86,12 +86,12 @@ const Navbar = () => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="gluten" className="pages">
+              <NavLinks to="/gluten" className="pages">
                 GLUTEN FREE
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="dairy" className="pages">
+              <NavLinks to="/dairy" className="pages">
                 DAIRY FREE
               </NavLinks>
             </NavItem>
