@@ -9,6 +9,11 @@
     overflow: hidden;
 }
 
+.recipe-card-title {
+    font-weight: bold;
+    text-align: center;
+}
+
 .recipe-card p {
     text-align: center;
 }

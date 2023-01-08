@@ -12,6 +12,7 @@
 
 import React from "react";
 import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import {
   Nav,
   NavbarContainer,
@@ -29,41 +30,50 @@ const Navbar = () => {
     <div>
       <Nav>
         <NavbarContainer>
-          <img
-            style={{ width: "auto", height: "auto" }}
-            src={require("../../logo.png")}
-            alt="recipe"
-            to="/"
-          />
+          <Link to="/">
+            <img
+              style={{
+                width: "80px",
+                height: "80px",
+                padding: "10px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginLeft: "1%",
+              }}
+              src={require("../../logo.png")}
+              alt="recipe"
+            />
+          </Link>
 
           {/* <NavLogo to="/">reci.py</NavLogo> */}
-          <MobileIcon>
+          {/* <MobileIcon>
             <FaBars />
-          </MobileIcon>
+          </MobileIcon> */}
           <NavMenu>
             <NavItem>
-              <NavLinks to="about">All Recipes</NavLinks>
+              <NavLinks to="about">ALL RECIPES</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">Healthy</NavLinks>
+              <NavLinks to="about">HEALTHY</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">Cheap</NavLinks>
+              <NavLinks to="about">CHEAP</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">Popular</NavLinks>
+              <NavLinks to="about">POPULAR</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">Vegan</NavLinks>
+              <NavLinks to="about">VEGAN</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">Vegetarian</NavLinks>
+              <NavLinks to="about">VEGETARIAN</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">Gluten Free</NavLinks>
+              <NavLinks to="about">GLUTEN FREE</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">Dairy Free</NavLinks>
+              <NavLinks to="about">DAIRY FREE</NavLinks>
             </NavItem>
           </NavMenu>
           {/* <NavBtn>
