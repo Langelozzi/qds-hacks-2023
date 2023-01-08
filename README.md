@@ -22,13 +22,15 @@ A Flask based back-end that has endpoints for all user requests.
 
 ### `Nav bar`
 
-* All Recipes:
-* Healthy:
-* Vegan:
-* Gluten Free:
-* Dairy Free:
+* All Recipes: This tab will provide the user with all the recipes that match their ingredient query.
+* Healthy: Using the data set we scraped, we filtered out only the recipes that are identified as healthy, and only return those to a users query.
+* Vegan: This tab will only show search results that are vegan.
+* Gluten Free: The gluten free tab provides only search results that are gluten free, based on the data provided in our data set.
+* Dairy Free: The dairy free tab returns only dairy free search results.
 
 ### `Search bar`
+
+The search bar provides the user with a minimalistic avenue to input their ingredients. As you input ingredients, you can see them being added to the list above. You can easily remove and add more, and only need to worry about a single text input. The search interface is consistent throughout all tabs of the application, to provide a congruent UI for the user.
 
 ### Code Splitting
 
