@@ -6,7 +6,7 @@
 
 ## Objective
 
-We wanted to take our hackthon propmt, "turning data into insight", and give it a practice application for the widest range of users possible. We set out to create an application that, using our match score based algorithm, delivers the user a list of recipes that most closely matches the ingredients they already have in their homes! Instead of searching for a recipe, only to find out you need to buy all the ingredients for it, we want to let the user tell us what ingredients they have, and provide them with recipes they are already ready to make.
+We wanted to take our hackthon propmt, "turning data into insight", and give it a practical application for the widest range of users possible. We set out to create an application that, using our match score based algorithm, delivers the user a list of recipes that most closely matches the ingredients they already have in their homes! Instead of searching for a recipe, only to find out you need to buy all the ingredients for it, we want to let the user tell us what ingredients they have, and provide them with recipes they are most prepared to make.
 
 ### `Front-end`
 
