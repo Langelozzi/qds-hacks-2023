@@ -25,33 +25,19 @@ Flask based back-end that has endpoints for all user requests.
 * All Recipes: This tab will provide the user with all the recipes that match their ingredient query.
 * Healthy: Using the data set we scraped, we filtered out only the recipes that are identified as healthy, and only return those to a users query.
 * Vegan: This tab will only show search results that are vegan.
-* Gluten Free: The gluten free tab provides only search results that are gluten free, based on the data provided in our data set.
-* Dairy Free: The dairy free tab returns only dairy free search results.
+* Gluten-free: The gluten free tab provides only search results that are gluten free, based on the data provided in our data set.
+* Dairy-free: The dairy free tab returns only dairy free search results.
+
+<br>
 
 ### `Search bar`
 
 The search bar provides the user with a minimalistic avenue to input their ingredients. As you input ingredients, you can see them being added to the list above. You can easily remove and add more, and only need to worry about a single text input. The search interface is consistent throughout all tabs of the application, to provide a congruent UI for the user.
 
----
-
-## React README.md Information
-
-### Code Splitting
+<br>
 
 ### `Recipe cards`
 
 * Each recipe card is dynamically populated according to the ingredients via the query.
 * The recipe results will also display a compatibility bar -- according to the number of entered ingredients of the user.
 * If the user has all the ingredients, there will be an animated compatibility bar to display this.
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
