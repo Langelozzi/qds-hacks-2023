@@ -29,7 +29,14 @@ const Navbar = () => {
     <div>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">reci.py</NavLogo>
+          <img
+            style={{ width: "auto", height: "auto" }}
+            src={require("../../logo.png")}
+            alt="recipe"
+            to="/"
+          />
+
+          {/* <NavLogo to="/">reci.py</NavLogo> */}
           <MobileIcon>
             <FaBars />
           </MobileIcon>
