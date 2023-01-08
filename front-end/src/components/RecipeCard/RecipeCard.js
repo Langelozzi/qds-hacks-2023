@@ -7,7 +7,7 @@ export default function RecipeCard({ recipe }) {
     const [recipeData, setRecipeData] = React.useState({ ...recipe })
 
     function progressBarWithLabel() {
-        const matchScorePercentage = recipe.matchScore * 100;
+        const matchScorePercentage = Math.round(recipe.matchScore * 100);
         let colorVariant = 'primary';
 
         if (matchScorePercentage < 30) {
@@ -32,7 +32,7 @@ export default function RecipeCard({ recipe }) {
                 <Card className='recipe-card'>
                     <Card.Img variant="top" src={recipe.image} />
                     <Card.Body>
-                        <Card.Title>{recipe.title}</Card.Title>
+                        <Card.Title className='recipe-card-title'>{recipe.title}</Card.Title>
                         <Card.Text>
                             {recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}
                         </Card.Text>

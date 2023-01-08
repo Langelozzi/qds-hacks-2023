@@ -28,7 +28,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes }) {
     };
 
     return (
-        <div>
+        <div className='search'>
             <div>
                 {
                     ingredients.map((ingredient, index) => {
