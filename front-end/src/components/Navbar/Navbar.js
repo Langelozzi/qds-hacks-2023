@@ -57,7 +57,7 @@ const Navbar = () => {
           </MobileIcon> */}
           <NavMenu>
             <NavItem>
-              <NavLinks to="about">ALL RECIPES</NavLinks>
+              <NavLinks to="/">ALL RECIPES</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="/healthy" onClick={(event) => handleClick(event)}>
