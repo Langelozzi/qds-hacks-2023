@@ -1,5 +1,5 @@
 import React from 'react';
-import { getRecipesOrderedByIngredients } from '../../services/recipe.service'
+import { getRecipesOrderedByIngredients, getHealthyRecipesOrderedByIngredients } from '../../services/recipe.service'
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import IngredientCard from '../IngredientCard/IngredientCard';
 
@@ -20,7 +20,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
     }, [])
 
     React.useEffect(() => {
-        window.localStorage.setItem(localHostKey, JSON.stringify(ingredients)); 
+        window.localStorage.setItem(localHostKey, JSON.stringify(ingredients));
     }, [ingredients])
 
     function addIngredient() {
@@ -38,10 +38,11 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
 
     async function handleSearchSubmit(event) {
         let recipes = [];
+        console.log(filter);
 
         switch (filter) {
             case "healthy":
-                recipes = await getRecipesOrderedByIngredients(ingredients);
+                recipes = await getHealthyRecipesOrderedByIngredients(ingredients);
                 break;
             default:
                 recipes = await getRecipesOrderedByIngredients(ingredients);
@@ -54,7 +55,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
     return (
         <div className='search'>
             <div>
-                {   
+                {
                     ingredients &&
                     ingredients.map((ingredient, index) => {
                         return <IngredientCard key={`${ingredient}-${index}`} text={ingredient} index={index} removeIngredient={removeIngredient} />

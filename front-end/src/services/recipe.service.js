@@ -32,5 +32,6 @@ async function getRecipeById(id) {
 export {
     getAllRecipes,
     getRecipesOrderedByIngredients,
+    getHealthyRecipesOrderedByIngredients,
     getRecipeById
 }
