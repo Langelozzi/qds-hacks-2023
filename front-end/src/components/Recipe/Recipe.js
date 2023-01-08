@@ -34,6 +34,9 @@ export default function Recipe() {
       <div className="header">
         <h1 className="centre">{recipe.title}</h1>
         <img className="mealPicture centerImage" src={recipe.image}></img>
+        <p>{recipe.readyInMinutes}</p>
+        <p>{recipe.servings}</p>
+        <p>69% match</p>
       </div>
 
       <div className="description">
