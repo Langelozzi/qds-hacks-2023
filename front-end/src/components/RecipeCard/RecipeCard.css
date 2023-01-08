@@ -1,3 +1,10 @@
 .card {
     margin: 1rem;
 }
+
+.card-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}

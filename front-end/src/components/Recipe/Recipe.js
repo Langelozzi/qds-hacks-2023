@@ -1,19 +1,11 @@
 import React from 'react';
 import './Recipe.css';
-import { getRecipeById } from '../../services/recipe.service';
 import Image from 'react-bootstrap/Image'
+import { useLocation } from 'react-router-dom';
 
 export default function Recipe() {
-  const [recipe, setRecipe] = React.useState({});
-
-  React.useEffect(() => {
-    async function loadRecipe() {
-      const data = await getRecipeById(641794);
-      data.summary = data.summary.replace(/<\/?[^>]+(>|$)/g, "");
-      setRecipe(data);
-    }
-    loadRecipe();
-  }, [])
+    const location = useLocation();
+    const recipe = location.state?.recipe;
 
   let ingredientsToRender;
   if (recipe.extendedIngredients) {
