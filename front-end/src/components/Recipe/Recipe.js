@@ -41,15 +41,22 @@ export default function Recipe() {
       <main>
         <div className="recipeContent">
           <Tabs
-            defaultActiveKey="profile"
+            defaultActiveKey="description"
             id="uncontrolled-tab-example"
             className="mb-3"
           >
             <Tab eventKey="description" title="Description">
+              <p>{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
             </Tab>
             <Tab eventKey="ingredients" title="Ingredients">
+              {
+                ingredientsToRender
+              }
             </Tab>
             <Tab eventKey="instructions" title="Instructions">
+              {
+                instructionsToRender
+              }
             </Tab>
           </Tabs>
         </div>
