@@ -50,7 +50,7 @@ export default function Recipe() {
         <div id="headerMenu">
           <div className="menuitem"><FaRegClock></FaRegClock>&nbsp;&nbsp;{recipe.readyInMinutes}</div>
           <div className="menuitem" id="centrepiece"><BsPeopleFill></BsPeopleFill>&nbsp;&nbsp;{recipe.servings}</div>
-          <div className="menuitem"><TbTarget></TbTarget>&nbsp;&nbsp;{recipe.matchScore * 100}% match</div>
+          <div className="menuitem"><TbTarget></TbTarget>&nbsp;&nbsp;{Math.round(recipe.matchScore * 100)}% match</div>
         </div>
       </div>
 
