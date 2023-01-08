@@ -26,7 +26,7 @@ import {
 } from "./NavbarElements";
 import "./Navbar.css";
 
-document.querySelector(".nav-links").array.forEach((link) => {
+document.querySelectorAll(".nav-links").forEach((link) => {
   console.log(link.href);
 });
 
