@@ -115,7 +115,7 @@ const Navbar = () => {
               }}
             >
               <NavLinks
-                to="/gluten pages"
+                to="/gluten"
                 onClick={() => {
                   document
                     .querySelectorAll(".pages")
