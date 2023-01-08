@@ -74,21 +74,27 @@ export default function Recipe() {
             fill
           >
             <Tab eventKey="description" title="Description">
-              <p class="recipeDescription">{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
+              <p className="recipeDescription">{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
             </Tab>
             <Tab eventKey="ingredients" title="Ingredients">
-              <div class="recipeDescription">
-                {
-                  ingredientsToRender
-                }
+              <div className="recipeDescription">
+                <table>
+                  <tbody>
+                    {
+                      ingredientsToRender
+                    }
+                  </tbody>
+                </table>
               </div>
             </Tab>
             <Tab eventKey="instructions" title="Instructions">
-              <div class="recipeDescription">
+              <div className="recipeDescription">
                 <table>
-                  {
-                    instructionsToRender
-                  }
+                  <tbody>
+                    {
+                      instructionsToRender
+                    }
+                  </tbody>
                 </table>
               </div>
             </Tab>
