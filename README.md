@@ -1,4 +1,4 @@
-# QDS Hacks 2023
+# Reci.py - QDS Hacks 2023
 
 <b>Team Froggue</b>: Lucas Angelozzi, Arman Chinai, Annette Lam, Amir Eskandari, Cameron Smith
 
