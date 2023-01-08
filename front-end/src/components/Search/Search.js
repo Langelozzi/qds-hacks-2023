@@ -36,7 +36,13 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
         setIngredients(ingredientsCopy)
     }
 
-    async function handleSearchSubmit(event) {
+    function handleEnterClick(event) {
+        if (event.key == 'Enter') {
+            addIngredient();
+        }
+    }
+
+    async function handleSearchSubmit() {
         let recipes = [];
 
         switch (filter) {
@@ -77,6 +83,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
                     aria-describedby="basic-addon2"
                     value={textInputVal}
                     onChange={event => setTextInputVal(event.target.value)}
+                    onKeyUp={event => handleEnterClick(event)}
                 />
                 <Button
                     variant="success"
@@ -89,7 +96,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
                 <Button
                     variant="primary"
                     size="lg"
-                    onClick={event => handleSearchSubmit(event)}
+                    onClick={event => handleSearchSubmit()}
                 >Search
                 </Button></InputGroup>
         </div>
