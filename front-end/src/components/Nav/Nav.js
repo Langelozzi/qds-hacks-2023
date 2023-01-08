@@ -1,13 +1,13 @@
 import './Nav.css';
 import React, { useState } from 'react';
-import {
-  MDBContainer,
-  MDBCollapse,
-  MDBNavbar,
-  MDBNavbarToggler,
-  MDBIcon,
-  MDBBtn,
-} from 'mdb-react-ui-kit';
+// import {
+//   MDBContainer,
+//   MDBCollapse,
+//   MDBNavbar,
+//   MDBNavbarToggler,
+//   MDBIcon,
+//   MDBBtn,
+// } from 'mdb-react-ui-kit';
 
 export default function App() {
   const [showAnimated, setShowAnimated] = useState(false);
@@ -15,7 +15,7 @@ export default function App() {
   return (
     <>
       <section className='mb-3'>
-        <MDBNavbar>
+        {/* <MDBNavbar>
           <MDBContainer fluid>
             <MDBNavbarToggler
               type='button'
@@ -47,7 +47,7 @@ export default function App() {
               Cheap
             </MDBBtn>
           </div>
-        </MDBCollapse>
+        </MDBCollapse> */}
       </section>
     </>
   );
