@@ -16,18 +16,9 @@ function App() {
       <Nav />
       <div className="content">
         <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
-          <Route
-            path="/healthy"
-            element={<Home filter={'healthy'}/>}
-          />
-          <Route
-            path="/vegan"
-            element={<Home filter={'vegan'}/>}
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/healthy" element={<Home filter={"healthy"} />} />
+          <Route path="/vegan" element={<Home filter={"vegan"} />} />
           <Route path="/recipe" element={<Recipe />} />
         </Routes>
       </div>
