@@ -20,14 +20,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
             setIngredients(localHostIngredients);
         }
     }, [])
-
-    React.useEffect(() => {
-        async function reload() {
-            await handleSearchSubmit();
-        }
-        reload();
-    }, [location])
-
+    
     React.useEffect(() => {
         window.localStorage.setItem(localHostKey, JSON.stringify(ingredients));
     }, [ingredients])
@@ -62,7 +55,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
 
     return (
         <div className='search'>
-            <div>
+            <div className='ingredientList'>
                 {
                     ingredients &&
                     ingredients.map((ingredient, index) => {

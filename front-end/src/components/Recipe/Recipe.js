@@ -1,23 +1,11 @@
 import React from 'react';
 import './Recipe.css';
-import Image from 'react-bootstrap/Image'
 import { useLocation } from 'react-router-dom';
 import { FaRegClock } from "react-icons/fa";
 import { BsPeopleFill } from "react-icons/bs"
 import { TbTarget } from "react-icons/tb"
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-
-
-{/* <table>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table> */}
-
-
 
 
 export default function Recipe() {
@@ -74,21 +62,27 @@ export default function Recipe() {
             fill
           >
             <Tab eventKey="description" title="Description">
-              <p class="recipeDescription">{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
+              <p className="recipeDescription">{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
             </Tab>
             <Tab eventKey="ingredients" title="Ingredients">
-              <div class="recipeDescription">
-                {
-                  ingredientsToRender
-                }
+              <div className="recipeDescription">
+                <table>
+                  <tbody>
+                    {
+                      ingredientsToRender
+                    }
+                  </tbody>
+                </table>
               </div>
             </Tab>
             <Tab eventKey="instructions" title="Instructions">
-              <div class="recipeDescription">
+              <div className="recipeDescription">
                 <table>
-                  {
-                    instructionsToRender
-                  }
+                  <tbody>
+                    {
+                      instructionsToRender
+                    }
+                  </tbody>
                 </table>
               </div>
             </Tab>
@@ -99,27 +93,6 @@ export default function Recipe() {
           <img className="mealPicture centerImage" src={recipe.image}></img>
         </div>
       </main>
-      {/* <img className="mealPicture centerImage" src={recipe.image}></img>
-      <div className="description">
-        <h2 className="left">Description</h2>
-        <p>{recipe.summary}</p>
-      </div>
-
-      <div className="ingredients">
-        <h2 className="left">Ingredients</h2>
-        {
-          ingredientsToRender
-        }
-      </div>
-
-      <div className="instructions">
-        <h2 className="left">Instructions</h2>
-        {
-          instructionsToRender
-        }
-      </div> */}
-
-
     </div>
   )
 }
