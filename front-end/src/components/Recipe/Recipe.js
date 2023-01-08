@@ -31,7 +31,7 @@ export default function Recipe() {
         <div id="headerMenu">
           <div class="menuitem"><FaRegClock></FaRegClock>&nbsp;&nbsp;{recipe.readyInMinutes}</div>
           <div class="menuitem"><BsPeopleFill></BsPeopleFill>&nbsp;&nbsp;{recipe.servings}</div>
-          <div class="menuitem"><GrTarget></GrTarget>&nbsp;&nbsp;69% match</div>
+          <div class="menuitem"><GrTarget></GrTarget>&nbsp;&nbsp;{recipe.matchScore * 100}% match</div>
         </div>
       </div>
 
