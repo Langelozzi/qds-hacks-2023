@@ -62,7 +62,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
 
     return (
         <div className='search'>
-            <div>
+            <div className='ingredientList'>
                 {
                     ingredients &&
                     ingredients.map((ingredient, index) => {
