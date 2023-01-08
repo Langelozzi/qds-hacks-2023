@@ -1,16 +1,22 @@
 .ingredient-card {
-    border: solid black 1px;
-    background-color: #47ABFF !important;
+    border: solid white 1px;
+    background-color: rgb(92, 114, 223);
     display: inline-block !important;
+    padding: none !important;
+}
+
+.ingredient-card .card-body {
+    padding: 0 !important;
 }
 
 .ingredient-card .card-text {
     display: inline;
-    color: rgb(252, 245, 245)
+    color: white;
 }
 
 .ingredient-card .btn {
-    display: inline;
+    text-decoration: none !important;
     margin-left: 1rem;
     background-color: none !important;
+    display: inline-block;
 }
