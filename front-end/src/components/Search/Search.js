@@ -4,10 +4,12 @@ import { Button, Form, InputGroup } from 'react-bootstrap';
 import IngredientCard from '../IngredientCard/IngredientCard';
 
 import './Search.css';
+import { useLocation } from 'react-router-dom';
 
 export default function Search({ filteredRecipes, setFilteredRecipes, filter }) {
     const [ingredients, setIngredients] = React.useState([]);
     const [textInputVal, setTextInputVal] = React.useState('');
+    const location = useLocation();
 
     const localHostKey = 'INGREDIENT_LIST_KEY';
 
@@ -18,6 +20,16 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
             setIngredients(localHostIngredients);
         }
     }, [])
+
+    React.useEffect(() => {
+        let localHostIngredients = JSON.parse(window.localStorage.getItem(localHostKey));
+
+        if (localHostIngredients != null) {
+            setIngredients(localHostIngredients);
+        }
+
+        handleSearchSubmit();
+    }, [location])
     
     React.useEffect(() => {
         window.localStorage.setItem(localHostKey, JSON.stringify(ingredients));
