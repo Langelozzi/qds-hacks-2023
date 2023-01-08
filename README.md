@@ -32,7 +32,9 @@ A Flask based back-end that has endpoints for all user requests.
 
 The search bar provides the user with a minimalistic avenue to input their ingredients. As you input ingredients, you can see them being added to the list above. You can easily remove and add more, and only need to worry about a single text input. The search interface is consistent throughout all tabs of the application, to provide a congruent UI for the user.
 
-### `React README.md Information`
+---
+
+## React README.md Information
 
 ### Code Splitting
 
