@@ -28,23 +28,17 @@ export default function Recipe() {
   if (recipe.extendedIngredients) {
     ingredientsToRender = recipe.extendedIngredients.map(ingredient => {
       return <tr key={ingredient.id}>
-        <td className="quantity" key="quantity">
-          {ingredient.amount}
+        <td className="number" key="number">
+          <div key={"number"}>{ingredient.amount}</div>
         </td>
         <td className="ingredient" key="ingredient">
           <div key={ingredient.id}>
-            {ingredient.unit}&nbsp;{ingredient.name}
+            {ingredient.unit}{ingredient.unit ? ' ' : ''}{ingredient.name}
           </div>
         </td>
       </tr>;
     });
   }
-
-
-
-
-
-
 
   let instructionsToRender;
   if (recipe.analyzedInstructions) {
@@ -77,21 +71,26 @@ export default function Recipe() {
             defaultActiveKey="description"
             id="uncontrolled-tab-example"
             className="mb-3"
+            fill
           >
             <Tab eventKey="description" title="Description">
-              <p>{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
+              <p class="recipeDescription">{recipe.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
             </Tab>
             <Tab eventKey="ingredients" title="Ingredients">
-              {
-                ingredientsToRender
-              }
+              <div class="recipeDescription">
+                {
+                  ingredientsToRender
+                }
+              </div>
             </Tab>
             <Tab eventKey="instructions" title="Instructions">
-              <table>
-                {
-                  instructionsToRender
-                }
-              </table>
+              <div class="recipeDescription">
+                <table>
+                  {
+                    instructionsToRender
+                  }
+                </table>
+              </div>
             </Tab>
           </Tabs>
         </div>

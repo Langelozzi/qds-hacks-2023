@@ -62,7 +62,7 @@ const Navbar = () => {
           <NavMenu>
             <NavItem>
               <NavLinks
-                to="about"
+                to="/"
                 className="nav-links"
                 // aria-current="page"
               >

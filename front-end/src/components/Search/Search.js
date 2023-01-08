@@ -1,17 +1,19 @@
 import React from 'react';
-import { getRecipesOrderedByIngredients } from '../../services/recipe.service'
+import { getRecipesOrderedByIngredients, getHealthyRecipesOrderedByIngredients } from '../../services/recipe.service'
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import IngredientCard from '../IngredientCard/IngredientCard';
+import { useLocation } from 'react-router-dom';
 
 import './Search.css';
 
 export default function Search({ filteredRecipes, setFilteredRecipes, filter }) {
     const [ingredients, setIngredients] = React.useState([]);
     const [textInputVal, setTextInputVal] = React.useState('');
+    const location = useLocation();
 
     const localHostKey = 'INGREDIENT_LIST_KEY';
 
-    React.useState(() => {
+    React.useEffect(() => {
         let localHostIngredients = JSON.parse(window.localStorage.getItem(localHostKey));
 
         if (localHostIngredients != null) {
@@ -20,7 +22,14 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
     }, [])
 
     React.useEffect(() => {
-        window.localStorage.setItem(localHostKey, JSON.stringify(ingredients)); 
+        async function reload() {
+            await handleSearchSubmit();
+        }
+        reload();
+    }, [location])
+
+    React.useEffect(() => {
+        window.localStorage.setItem(localHostKey, JSON.stringify(ingredients));
     }, [ingredients])
 
     function addIngredient() {
@@ -41,7 +50,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
 
         switch (filter) {
             case "healthy":
-                recipes = await getRecipesOrderedByIngredients(ingredients);
+                recipes = await getHealthyRecipesOrderedByIngredients(ingredients);
                 break;
             default:
                 recipes = await getRecipesOrderedByIngredients(ingredients);
@@ -54,7 +63,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
     return (
         <div className='search'>
             <div>
-                {   
+                {
                     ingredients &&
                     ingredients.map((ingredient, index) => {
                         return <IngredientCard key={`${ingredient}-${index}`} text={ingredient} index={index} removeIngredient={removeIngredient} />
