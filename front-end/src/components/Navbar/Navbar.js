@@ -5,7 +5,7 @@
 // export default function Nav() {
 //   return (
 //     <div>
-//       <Hamburger />
+//       <Hamburger />s
 //     </div>
 //   );
 // }
@@ -26,8 +26,10 @@ import {
 } from "./NavbarElements";
 import "./Navbar.css";
 
-document.querySelectorAll(".nav-links").forEach((link) => {
-  console.log(link.href);
+document.querySelectorAll(".pages").forEach((link) => {
+  if (link.href === window.location.href) {
+    link.setAttribute("aria-current", "page");
+  }
 });
 
 const Navbar = () => {
@@ -70,24 +72,33 @@ const Navbar = () => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/healthy" onClick={(event) => handleClick(event)}>
+              <NavLinks
+                to="/healthy"
+                // onClick={(event) => handleClick(event)}
+                className="pages"
+              >
                 HEALTHY
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/popular">POPULAR</NavLinks>
+              <NavLinks to="/vegan" className="pages">
+                VEGAN
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/vega">VEGAN</NavLinks>
+              <NavLinks to="vegetarian" className="pages">
+                VEGETARIAN
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">VEGETARIAN</NavLinks>
+              <NavLinks to="gluten" className="pages">
+                GLUTEN FREE
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">GLUTEN FREE</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="about">DAIRY FREE</NavLinks>
+              <NavLinks to="dairy" className="pages">
+                DAIRY FREE
+              </NavLinks>
             </NavItem>
           </NavMenu>
           {/* <NavBtn>
