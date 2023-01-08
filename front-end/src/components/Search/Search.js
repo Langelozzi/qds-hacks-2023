@@ -5,7 +5,7 @@ import IngredientCard from '../IngredientCard/IngredientCard';
 
 import './Search.css';
 
-export default function Search({ filteredRecipes, setFilteredRecipes }) {
+export default function Search({ filteredRecipes, setFilteredRecipes, filter }) {
     const [ingredients, setIngredients] = React.useState([]);
     const [textInputVal, setTextInputVal] = React.useState('');
 
@@ -34,7 +34,17 @@ export default function Search({ filteredRecipes, setFilteredRecipes }) {
     }
 
     async function handleSearchSubmit(event) {
-        const recipes = await getRecipesOrderedByIngredients(ingredients)
+        let recipes = [];
+
+        switch (filter) {
+            case "healthy":
+                recipes = await getRecipesOrderedByIngredients(ingredients);
+                break;
+            default:
+                recipes = await getRecipesOrderedByIngredients(ingredients);
+                break;
+        }
+        
         await setFilteredRecipes(recipes);
     };
 

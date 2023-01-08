@@ -3,7 +3,7 @@ import RecipeList from "../RecipeList/RecipeList";
 import Search from "../Search/Search";
 import "./Home.css";
 
-export default function Home() {
+export default function Home({filter}) {
     const [filteredRecipes, setFilteredRecipes] = React.useState([]);
     const localHostKey = 'RECIPE_LIST_DATA';
 
@@ -22,6 +22,7 @@ export default function Home() {
             <Search
                 filteredRecipes={filteredRecipes}
                 setFilteredRecipes={setFilteredRecipes}
+                filter={filter}
             />
             <RecipeList recipes={filteredRecipes} setRecipes={setFilteredRecipes} />
         </div>

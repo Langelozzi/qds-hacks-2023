@@ -11,16 +11,6 @@ import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 
 function App() {
-  const [recipes, setRecipes] = React.useState([]);
-
-  React.useEffect(() => {
-    async function loadRecipes() {
-      const data = await getAllRecipes();
-      setRecipes(data);
-    }
-    loadRecipes();
-  }, []);
-
   return (
     <Router>
       <Nav />
@@ -28,7 +18,11 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home recipes={recipes} setRecipes={setRecipes} />}
+            element={<Home />}
+          />
+          <Route
+            path="/healthy"
+            element={<Home filter={'healthy'}/>}
           />
           <Route path="/recipe" element={<Recipe />} />
         </Routes>

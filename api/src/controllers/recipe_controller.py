@@ -13,8 +13,8 @@ class RecipeController:
     def get_all_recipe_names(self) -> list[str]:
         return [recipe['title'] for recipe in self.recipes]
 
-    def get_recipes_ordered_by_ingredients(self, ingredients: list):
-        recipes_with_match_scores = self.__set_match_scores(self.recipes, ingredients)
+    def get_recipes_ordered_by_ingredients(self, recipes: list, ingredients: list):
+        recipes_with_match_scores = self.__set_match_scores(recipes, ingredients)
         recipes_with_at_least_one_match = [recipe for recipe in recipes_with_match_scores if recipe["matchScore"] > 0]
         ordered_recipes = self.__sort_by_match_score(recipes_with_at_least_one_match)
 
@@ -24,6 +24,9 @@ class RecipeController:
         for element in self.recipes:
             if element['id'] == recipe_id:
                 return element
+
+    def get_healthy_recipes(self) -> list:
+        return [recipe for recipe in self.recipes if recipe['veryHealthy'] is True]
 
     # Private methods
     @staticmethod

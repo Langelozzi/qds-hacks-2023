@@ -23,8 +23,18 @@ def get_all_recipes():
 def get_recipes_matched_by_ingredient():
     request_body = request.get_json()
     ingredients = request_body["ingredients"]
+    recipes = recipe_controller.get_all_recipes()
 
-    return recipe_controller.get_recipes_ordered_by_ingredients(ingredients)
+    return recipe_controller.get_recipes_ordered_by_ingredients(recipes, ingredients)
+
+
+@app.route('/recipes/ingredient-wizard/healthy', methods=["POST"])
+def get_recipes_matched_by_ingredient_healthy():
+    request_body = request.get_json()
+    ingredients = request_body["ingredients"]
+    recipes = recipe_controller.get_healthy_recipes()
+
+    return recipe_controller.get_recipes_ordered_by_ingredients(recipes, ingredients)
 
 
 @app.route('/recipes/<recipe_id>')

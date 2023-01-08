@@ -55,7 +55,7 @@ const Navbar = () => {
               <NavLinks to="about">ALL RECIPES</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">HEALTHY</NavLinks>
+              <NavLinks to="/healthy">HEALTHY</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="about">CHEAP</NavLinks>
