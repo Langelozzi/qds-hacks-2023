@@ -11,7 +11,7 @@
 // }
 
 import React from "react";
-import { FaBars } from "react-icons/fa";
+// import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import {
   Nav,
@@ -26,16 +26,15 @@ import {
 } from "./NavbarElements";
 import "./Navbar.css";
 
-document.querySelectorAll(".pages").forEach((link) => {
-  if (link.href === window.location.href) {
-    link.setAttribute("aria-current", "page");
-  }
-});
-
 const Navbar = () => {
-  function handleClick(event) {
-    event.target.classList.toggle("active");
-  }
+  // function handleClick(event) {
+  //   event.target.classList.toggle("active");
+  // }
+  // document.querySelectorAll(".pages").forEach((link) => {
+  //   if (link.href === window.location.href) {
+  //     link.setAttribute("aria-current", "page");
+  //   }
+  // });
 
   return (
     <div>
@@ -62,31 +61,81 @@ const Navbar = () => {
             <FaBars />
           </MobileIcon> */}
           <NavMenu>
-            <NavItem>
-              <NavLinks to="/" className="nav-links" aria-current="page">
+            <NavItem
+              className="all pages"
+              onClick={() => {
+                document
+                  .querySelectorAll(".pages")
+                  .forEach((link) => link.classList.remove("selected"));
+                document.querySelector(".all").classList.add("selected");
+              }}
+            >
+              <NavLinks
+                className="all selected pages"
+                to="/"
+                // className=isSelected("ALL RECIPES")? "pages selected" : "pages"
+                // aria-current="page"
+              >
                 ALL RECIPES
               </NavLinks>
             </NavItem>
-            <NavItem>
-              <NavLinks
-                to="/healthy"
-                // onClick={(event) => handleClick(event)}
-                className="pages"
-              >
-                HEALTHY
-              </NavLinks>
+
+            <NavItem
+              className="healthy pages"
+              onClick={() => {
+                document
+                  .querySelectorAll(".pages")
+                  .forEach((link) => link.classList.remove("selected"));
+                document.querySelector(".healthy").classList.add("selected");
+              }}
+            >
+              <NavLinks to="/healthy">HEALTHY</NavLinks>
             </NavItem>
-            <NavItem>
+
+            <NavItem
+              className="vegan pages"
+              onClick={() => {
+                document
+                  .querySelectorAll(".pages")
+                  .forEach((link) => link.classList.remove("selected"));
+                document.querySelector(".vegan").classList.add("selected");
+              }}
+            >
               <NavLinks to="/vegan" className="pages">
                 VEGAN
               </NavLinks>
             </NavItem>
-            <NavItem>
-              <NavLinks to="/gluten" className="pages">
+            <NavItem
+              className="gluten pages"
+              onClick={() => {
+                document
+                  .querySelectorAll(".pages")
+                  .forEach((link) => link.classList.remove("selected"));
+                document.querySelector(".gluten").classList.add("selected");
+              }}
+            >
+              <NavLinks
+                to="/gluten pages"
+                onClick={() => {
+                  document
+                    .querySelectorAll(".pages")
+                    .forEach((link) => link.classList.remove("selected"));
+                  document.querySelector(".gluten").classList.add("selected");
+                }}
+                className="pages"
+              >
                 GLUTEN FREE
               </NavLinks>
             </NavItem>
-            <NavItem>
+            <NavItem
+              className="dairy pages"
+              onClick={() => {
+                document
+                  .querySelectorAll(".pages")
+                  .forEach((link) => link.classList.remove("selected"));
+                document.querySelector(".dairy").classList.add("selected");
+              }}
+            >
               <NavLinks to="/dairy" className="pages">
                 DAIRY FREE
               </NavLinks>
