@@ -24,8 +24,13 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
+import "./Navbar.css";
 
 const Navbar = () => {
+  function handleClick(event) {
+    event.target.classList.toggle("active");
+  }
+
   return (
     <div>
       <Nav>
@@ -55,7 +60,9 @@ const Navbar = () => {
               <NavLinks to="about">ALL RECIPES</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/healthy">HEALTHY</NavLinks>
+              <NavLinks to="/healthy" onClick={(event) => handleClick(event)}>
+                HEALTHY
+              </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="about">CHEAP</NavLinks>
