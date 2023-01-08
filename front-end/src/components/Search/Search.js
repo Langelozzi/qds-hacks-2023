@@ -13,7 +13,10 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
 
     React.useState(() => {
         let localHostIngredients = JSON.parse(window.localStorage.getItem(localHostKey));
-        setIngredients(localHostIngredients);
+
+        if (localHostIngredients != null) {
+            setIngredients(localHostIngredients);
+        }
     }, [])
 
     React.useEffect(() => {
@@ -44,7 +47,7 @@ export default function Search({ filteredRecipes, setFilteredRecipes, filter }) 
                 recipes = await getRecipesOrderedByIngredients(ingredients);
                 break;
         }
-        
+
         await setFilteredRecipes(recipes);
     };
 
