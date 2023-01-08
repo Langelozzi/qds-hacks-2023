@@ -75,7 +75,14 @@ main {
 .number {
     font-size: 35px;
     text-align: center;
-    padding-right: 45px;
+    padding-right: 20px;
+}
+
+.number-small {
+    font-size: 30px;
+    text-align: center;
+    padding-right: 20px;
+    width: 20%;
 }
 
 .ingredient {

@@ -6,6 +6,7 @@ import { BsPeopleFill } from "react-icons/bs"
 import { TbTarget } from "react-icons/tb"
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import Fraction from 'fraction.js';
 
 
 export default function Recipe() {
@@ -16,8 +17,8 @@ export default function Recipe() {
   if (recipe.extendedIngredients) {
     ingredientsToRender = recipe.extendedIngredients.map(ingredient => {
       return <tr key={ingredient.id}>
-        <td className="number" key="number">
-          <div key={"number"}>{ingredient.amount}</div>
+        <td className={(ingredient.amount > 10 && ingredient.amount % 1 != 0) ? 'number-small' : 'number'} key="number">
+          <div key={"number"}>{Fraction(ingredient.amount).toFraction(true)}</div>
         </td>
         <td className="ingredient" key="ingredient">
           <div key={ingredient.id}>
