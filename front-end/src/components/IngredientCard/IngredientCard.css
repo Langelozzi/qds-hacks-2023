@@ -1,15 +1,15 @@
-.card {
+.ingredient-card {
     border: solid black 1px;
     background-color: #47ABFF !important;
     display: inline-block !important;
 }
 
-.card-text {
+.ingredient-card .card-text {
     display: inline;
     color: rgb(252, 245, 245)
 }
 
-.btn {
+.ingredient-card .btn {
     display: inline;
     margin-left: 1rem;
     background-color: none !important;
