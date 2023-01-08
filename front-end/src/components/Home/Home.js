@@ -8,7 +8,6 @@ export default function Home({ recipes, setRecipes }) {
 
     return (
         <div className="landing-page">
-            <h1>Welcome to Reci.py</h1>
             <img src={require("../../recipy.png")} alt="recipe" />
             <Search filteredRecipes={filteredRecipes} setFilteredRecipes={setFilteredRecipes}/>
             <RecipeList recipes={filteredRecipes}/>
