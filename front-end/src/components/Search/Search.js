@@ -5,7 +5,7 @@ import IngredientCard from '../IngredientCard/IngredientCard';
 
 import './Search.css';
 
-export default function Search({filteredRecipes, setFilteredRecipes}) {
+export default function Search({ filteredRecipes, setFilteredRecipes }) {
     const [ingredients, setIngredients] = React.useState([]);
     const [textInputVal, setTextInputVal] = React.useState('');
 
@@ -32,7 +32,7 @@ export default function Search({filteredRecipes, setFilteredRecipes}) {
             <div>
                 {
                     ingredients.map((ingredient, index) => {
-                        return <IngredientCard key={`${ingredient}-${index}`} text={ingredient} index={index} removeIngredient={removeIngredient}/>
+                        return <IngredientCard key={`${ingredient}-${index}`} text={ingredient} index={index} removeIngredient={removeIngredient} />
                     })
                 }
             </div>
@@ -48,11 +48,16 @@ export default function Search({filteredRecipes, setFilteredRecipes}) {
                     variant="success"
                     id="button-addon2"
                     onClick={addIngredient}
-                >
-                    Add
+                >Add
                 </Button>
             </InputGroup>
-            <Button onClick={event => handleSearchSubmit(event)}>Search</Button>
+            <InputGroup className="searchBtn">
+                <Button
+                    variant="primary"
+                    size="lg"
+                    onClick={event => handleSearchSubmit(event)}
+                >Search
+                </Button></InputGroup>
         </div>
     )
 }
