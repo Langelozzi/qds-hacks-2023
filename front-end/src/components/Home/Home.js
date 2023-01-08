@@ -1,4 +1,5 @@
 import React from 'react';
+import RecipeList from '../RecipeList/RecipeList';
 import Search from '../Search/Search';
 import './Home.css';
 
@@ -10,6 +11,7 @@ export default function Home({ recipes, setRecipes }) {
             <h1>Welcome to Reci.py</h1>
             <img src={require("../../recipy.png")} alt="recipe" />
             <Search filteredRecipes={filteredRecipes} setFilteredRecipes={setFilteredRecipes}/>
+            <RecipeList recipes={filteredRecipes}/>
         </div>
     )
 }
