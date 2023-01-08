@@ -9,6 +9,17 @@ export default function Search({ filteredRecipes, setFilteredRecipes }) {
     const [ingredients, setIngredients] = React.useState([]);
     const [textInputVal, setTextInputVal] = React.useState('');
 
+    const localHostKey = 'INGREDIENT_LIST_KEY';
+
+    React.useState(() => {
+        let localHostIngredients = JSON.parse(window.localStorage.getItem(localHostKey));
+        setIngredients(localHostIngredients);
+    }, [])
+
+    React.useEffect(() => {
+        window.localStorage.setItem(localHostKey, JSON.stringify(ingredients)); 
+    }, [ingredients])
+
     function addIngredient() {
         let ingredientsCopy = [...ingredients];
         ingredientsCopy.push(textInputVal);
@@ -30,7 +41,8 @@ export default function Search({ filteredRecipes, setFilteredRecipes }) {
     return (
         <div className='search'>
             <div>
-                {
+                {   
+                    ingredients &&
                     ingredients.map((ingredient, index) => {
                         return <IngredientCard key={`${ingredient}-${index}`} text={ingredient} index={index} removeIngredient={removeIngredient} />
                     })
