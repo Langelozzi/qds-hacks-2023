@@ -7,7 +7,7 @@
 
 .centre {
     text-align: center;
-    color: white;
+    color: #f9de99;
 }
 
 .mealPicture {
@@ -50,10 +50,60 @@ main {
 .recipeContent {
     float: left;
     width: 60%;
-    background-color: grey;
+    background-color: #f4f4f3;
 }
 
 .recipeImage {
     float: right;
     width: 40%;
+}
+
+.recipeDescription {
+    padding: 25px 75px;
+}
+
+.number {
+    font-size: 35px;
+    text-align: center;
+    padding-right: 45px;
+}
+
+.ingredient {
+    width: 100%;
+    vertical-align: middle;
+    border-bottom: 1px dotted #273262;
+}
+
+.instruction {
+    width: 100%;
+    vertical-align: middle;
+    border-bottom: 1px dotted #273262;
+}
+
+.nav-tabs {
+    text-decoration: none !important;
+    color: #273262;
+    background-color: #273262
+}
+
+.nav-link {
+    text-decoration: none !important;
+    background-color: #273262;
+    color: #ffffff;
+    font-weight: bold;
+    border: 0px !important;
+}
+
+.nav-link:hover {
+    background-color: #dadbdd;
+    color: black;
+}
+
+.nav-link.active {
+    background-color: #f4f4f3 !important;
+    color: black;
+}
+
+.recipeContent {
+    border-radius: 8px;
 }
