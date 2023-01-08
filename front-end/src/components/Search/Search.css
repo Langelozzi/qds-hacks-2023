@@ -3,3 +3,9 @@
     display: inline-block !important;
     font-size: 24px;
 }
+
+.mb-3 {
+    max-width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
