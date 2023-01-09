@@ -17,7 +17,7 @@ export default function Recipe() {
   if (recipe.extendedIngredients) {
     ingredientsToRender = recipe.extendedIngredients.map(ingredient => {
       return <tr key={ingredient.id}>
-        <td className={(ingredient.amount > 10 && ingredient.amount % 1 != 0) ? 'number-small' : 'number'} key="number">
+        <td className={(ingredient.amount > 10 || ingredient.amount % 1 != 0) ? 'number-small' : 'number'} key="number">
           <div key={"number"}>{Fraction(ingredient.amount).toFraction(true)}</div>
         </td>
         <td className="ingredient" key="ingredient">
