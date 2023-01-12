@@ -3,6 +3,7 @@
 <b>Deployed</b>: https://qds-recipy.netlify.app/
 
 <b>Team Froggue</b>: Lucas Angelozzi, Arman Chinai, Annette Lam, Amir Eskandari, Cameron Smith
+
 ---
 
 ## Objective
